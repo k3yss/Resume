@@ -27,7 +27,7 @@ jobs:
 
       - name: Install Poppler
         run: |
-          sudo apt-get update -y
+          sudo apt-get update
           sudo apt-get install -y poppler-utils
 
       - name: Convert PDF to PNG
@@ -38,7 +38,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add Rishi_Kumar_Resume.png
+          git add *.png
           git commit -m "Add PNG image"
           git push
 
