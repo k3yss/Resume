@@ -33,6 +33,7 @@ jobs:
       - name: Convert PDF to PNG
         run: |
           pdftoppm -png Rishi_Kumar_Resume.pdf Rishi_Kumar_Resume
+          mv Rishi_Kumar_Resume-1.png Rishi_Kumar_Resume.png
 
       - name: Commit and push changes
         run: |
