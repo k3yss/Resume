@@ -36,8 +36,7 @@ jobs:
 
       - name: Move PNG to root directory
         run: |
-          mv Rishi_Kumar_Resume-1.png Rishi_Kumar_Resume.png  # Rename the output PNG file if needed
-          mv Rishi_Kumar_Resume.png $GITHUB_WORKSPACE
+          mv *.png $GITHUB_WORKSPACE
 
       - name: Commit and push changes
         run: |
