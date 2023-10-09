@@ -25,4 +25,26 @@ jobs:
           files: Rishi_Kumar_Resume.pdf
           name: Rishi_Kumar_Resume.pdf
 
+      - name: Install Poppler
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y poppler-utils
+
+      - name: Convert PDF to PNG
+        run: |
+          pdftoppm -png Rishi_Kumar_Resume.pdf Rishi_Kumar_Resume
+
+      - name: Move PNG to root directory
+        run: |
+          mv Rishi_Kumar_Resume-1.png Rishi_Kumar_Resume.png  # Rename the output PNG file if needed
+          mv Rishi_Kumar_Resume.png $GITHUB_WORKSPACE
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add Rishi_Kumar_Resume.png
+          git commit -m "Add PNG image"
+          git push
+
 
