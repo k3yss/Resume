@@ -1,12 +1,12 @@
 .PHONY: all run clean
 
-all: resume.pdf
+all: Rishi_Kumar_Resume.pdf
 
-resume.pdf: resume.tex
-	latexmk -pdf resume.tex
+Rishi_Kumar_Resume.pdf: Rishi_Kumar_Resume.tex
+	latexmk -pdf -jobname=Rishi_Kumar_Resume Rishi_Kumar_Resume.tex
 
-run: resume.pdf
-	zathura resume.pdf --fork
+run: Rishi_Kumar_Resume.pdf
+	zathura Rishi_Kumar_Resume.pdf --fork
 
 clean: 
 	latexmk -C 

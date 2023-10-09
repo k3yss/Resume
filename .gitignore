@@ -1,5 +1,5 @@
-resume.out
-resume.log
-resume.pdf
-resume.synctex.gz
-resume.aux
+*.out
+*.log
+*.pdf
+*.synctex.gz
+*.aux
