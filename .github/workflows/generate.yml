@@ -15,3 +15,9 @@ jobs:
         with:
           format: pdf
           filename: Rishi_Kumar_Resume.tex
+
+      - name: Release pdf
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Rishi_Kumar_Resume.pdf
+          name: Rishi_Kumar_Resume.pdf
