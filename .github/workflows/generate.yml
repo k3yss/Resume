@@ -32,7 +32,10 @@ jobs:
 
       - name: Convert PDF to PNG
         run: |
-          rm Rishi_Kumar_Resume.png
+          if [Rishi_Kumar_Resume.png]
+          then  
+            rm Rishi_Kumar_Resume.png
+          fi
           pdftoppm -png Rishi_Kumar_Resume.pdf Rishi_Kumar_Resume
           mv Rishi_Kumar_Resume-1.png Rishi_Kumar_Resume.png
 
