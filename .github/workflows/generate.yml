@@ -34,10 +34,6 @@ jobs:
         run: |
           pdftoppm -png Rishi_Kumar_Resume.pdf Rishi_Kumar_Resume
 
-      - name: Move PNG to root directory
-        run: |
-          mv *.png $GITHUB_WORKSPACE
-
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
