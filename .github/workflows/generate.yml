@@ -35,6 +35,10 @@ jobs:
           pdftoppm -png Rishi_Kumar_Resume.pdf Rishi_Kumar_Resume
           mv Rishi_Kumar_Resume-1.png Rishi_Kumar_Resume.png
 
+      - name: Remove PNG image
+        run: |
+          rm Rishi_Kumar_Resume.png
+
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
