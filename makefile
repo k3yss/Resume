@@ -13,3 +13,7 @@ image: Rishi_Kumar_Resume.pdf
 
 clean: 
 	latexmk -C 
+	rm -rf Rishi_Kumar_Resume.pdf Rishi_Kumar_Resume.png
+
+docker: Dockerfile resume.cls Rishi_Kumar_Resume.tex
+	DOCKER_BUILDKIT=1 sudo docker build -o ./ .
