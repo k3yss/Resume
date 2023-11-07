@@ -16,4 +16,4 @@ clean:
 	rm -rf Rishi_Kumar_Resume.pdf 
 
 docker: Dockerfile resume.cls Rishi_Kumar_Resume.tex
-	DOCKER_BUILDKIT=1 sudo docker build -o ./ .
+	DOCKER_BUILDKIT=1 docker build -o ./ .
