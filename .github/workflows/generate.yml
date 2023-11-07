@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Generate PDF document
+        if: ${{ !env.ACT }}
         uses: hspaans/latexmk-action@v1
         with:
           format: pdf
@@ -24,13 +25,25 @@ jobs:
         with:
           files: Rishi_Kumar_Resume.pdf
           name: Rishi_Kumar_Resume.pdf
+    
+      - name: Make a pre-release
+        if: ${{ !env.ACT }}
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files:  Rishi_Kumar_Resume.pdf
 
       - name: Install Poppler
+        if: ${{ !env.ACT }}
         run: |
           sudo apt-get update
           sudo apt-get install -y poppler-utils
 
       - name: Convert PDF to PNG
+        if: ${{ !env.ACT }}
         run: |
           if [Rishi_Kumar_Resume.png]
           then  
@@ -39,7 +52,19 @@ jobs:
           pdftoppm -png Rishi_Kumar_Resume.pdf Rishi_Kumar_Resume
           mv Rishi_Kumar_Resume-1.png Rishi_Kumar_Resume.png
 
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            echo "Changes detected. Committing and pushing..."
+            echo "name=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes detected. Skipping commit and push."
+            echo "name=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Commit and push changes
+        if: steps.check_changes.name
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
