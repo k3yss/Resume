@@ -9,8 +9,7 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    permissions: write-all
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -30,7 +29,6 @@ jobs:
           name: Rishi_Kumar_Resume.pdf
     
       - name: Make a pre-release
-        if: ${{ !env.ACT }}
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
