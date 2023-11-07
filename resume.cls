@@ -30,9 +30,7 @@
 \usepackage[svgnames]{xcolor}
 \hypersetup{
     colorlinks=true,
-    linkcolor=black,
-    filecolor=magenta,      
-    urlcolor=black,
+	allcolors=blue
 }
 
 \pagestyle{empty} % Suppress page numbers
