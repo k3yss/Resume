@@ -58,19 +58,17 @@ jobs:
         run: |
           if [[ -n $(git status -s) ]]; then
             echo "Changes detected. Committing and pushing..."
-            echo "name=true" >> $GITHUB_OUTPUT
+            echo "change=true" >> $GITHUB_OUTPUT
           else
             echo "No changes detected. Skipping commit and push."
-            echo "name=false" >> $GITHUB_OUTPUT
+            echo "change=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Commit and push changes
-        if: steps.check_changes.name
+        if: steps.check_changes.outputs.change
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add Rishi_Kumar_Resume.png
           git commit -m "Add PNG image"
           git push
-
-
