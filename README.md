@@ -2,7 +2,7 @@
 
 ![Rishi Kumar's Resume](Rishi_Kumar_Resume.png)
 
-### You can use Docker to generate artifacts without installing anything on your system!
+### Use Docker to generate artifacts without installing anything on your system!
 
 ````
 $ make docker
