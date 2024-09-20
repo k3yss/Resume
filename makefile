@@ -11,6 +11,9 @@ run: Rishi_Kumar_Resume.pdf
 image: Rishi_Kumar_Resume.pdf
 	pdftoppm -png Rishi_Kumar_Resume.pdf Rishi_Kumar_Resume
 
+watch: 
+	latexmk -pvc -pdf Rishi_Kumar_Resume.tex
+
 clean: 
 	latexmk -C 
 	rm -rf Rishi_Kumar_Resume.pdf 

@@ -1,6 +1,14 @@
 \documentclass{resume} % Use the custom resume.cls style
 
-\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{geometry} % Document margins
+\usepackage[left=0.3 in,top=0.3 in,right=0.3 in,bottom=0.3in]{geometry} % Document margins
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{*0}{*0}
+
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\linespread{0.9}
+
+
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 \name{Rishi Kumar} % Your name
@@ -10,43 +18,50 @@
 
 \begin{document}
 	
-	%----------------------------------------------------------------------------------------
-	%	OBJECTIVE
-	%	\begin{rSection}{OBJECTIVE}
-
-	%	{Software Engineer with 2+ years of experience in XXX, seeking full-time XXX roles.}
-
-
-	%	\end{rSection}
-	%----------------------------------------------------------------------------------------
-	
-	%----------------------------------------------------------------------------------------
-	%	EDUCATION SECTION
-	%----------------------------------------------------------------------------------------
-	
 	\begin{rSection}{Education}
-		
 		{\bf Indian Institute of Information Technology}  \hfill {Kalyani, West Bengal}\\
-		\textit{B.Tech Compter Science \hfill {Dec 2021 - June 2025}}\\
+		\textit{B.Tech Computer Science \hfill {Dec 2021 - Jun 2025}}\\
 		\textbf{Secretary} Free and Open Source Club, Freescape 
 		
 		{\bf Chinmaya Vidyalaya, Bokaro}  \hfill {Bokaro, Jharkhand}\\
 		\textit{Senior Secondary School \hfill {2018 - 2020}} \\
-		%Minor in Linguistics \smallskip \\
 		Received a \textbf{Gold Medal} for scoring the highest marks in \textbf{Computer Science}
-		%Member of Upsilon Pi Epsilon \\
-		
 	\end{rSection}
+
+	%----------------------------------------------------------------------------------------
+	%	INTERNSHIP SECTION
+	%----------------------------------------------------------------------------------------
+
+	\begin{rSection}{INTERNSHIP}
+		
+		\textbf{Galoy Money} \hfill Remote\\
+		\textit{Infrastructure Team} \hfill \textit{May 2024 - August 2024}
+		\begin{itemize}
+			\itemsep -1pt {} 
+			\item Selected through the \textbf{Summer of Bitcoin Program}, ranking in the \textbf{top 0.4\%} of applicants to be offered an internship.
+			\item Developed and automated \textbf{CI/CD} workflows using \textbf{Concourse} for AWS and GCP.
+			\item Independently researched and developed automated scripts and \textbf{terraform} module on how to do \textbf{database migration} on Galoy's infrastructure.
+		\end{itemize}
+	\end{rSection} 
 	%----------------------------------------------------------------------------------------
 	%	WORK EXPERIENCE SECTION
 	%----------------------------------------------------------------------------------------
 
 	\begin{rSection}{WORK EXPERIENCE}
 		
-		\textbf{Google Summer Of Code 2023} \hfill Remote\\
-		\textit{Contributor to Tokodon} \hfill \textit{May 2023 - September 2023}
+		\textbf{Cachix} \hfill Remote\\
+		\textit{Contractor} \hfill \textit{May 2024 - Aug 2024}
 		\begin{itemize}
-			\itemsep -3pt {} 
+			\itemsep -0.2pt {} 
+			\item Packaged \textbf{Android Development} environment for \textbf{Nix}, saving a lot of time for developer wanting \textbf{reproducibility}.
+			\item Setup the infrastructure for generating documentation improving the developer and user experience for devenv.sh
+			\item Worked on integrating \textbf{Language server} for devenv.sh
+		\end{itemize}
+
+		\textbf{Google Summer Of Code 2023} \hfill Remote\\
+		\textit{Contributor to Tokodon} \hfill \textit{May 2023 - Sep 2023}
+		\begin{itemize}
+			\itemsep -1pt {} 
 			\item Implemented \textbf{Moderation Tools} using \textbf{Mastodon API}. Used \textbf{QT/C++} on the backend and \textbf{QML} for user interface.
 			\item Contributed to \textbf{Mastodon's GitHub} addressing several \textbf{Issues} and \textbf{Merged Requests} addressing several bugs.
 			\item Contributed \textbf{6k+ lines} of code over several Merged Requests and detailed the process over several public blog posts. 
@@ -54,7 +69,7 @@
 		
 		\textbf{KDE} \hfill Remote\\
 		\textit{Maintainer, Contributor} \hfill \textit{Dec 2022 - Present}\\
-		Started contributing as part of \textbf{Season of KDE 2023} where I worked on porting Tokodon a KDE's Mastodon Client to work offline after which I wrote automated Appium tests and integrated them in GitLab CI. 
+		Began contributing as part of \textbf{Season of KDE 2023} where I worked on porting Tokodon a KDE's Mastodon Client to work offline after which I wrote automated Appium tests and integrated them in GitLab CI. 
 		
 	\end{rSection} 
 	
@@ -66,7 +81,7 @@
 		\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
 			Programming Languages: & C/C++, Javascript, Python, Go, Rust, VimScript, Lua, Nix\\
 			Frameworks: & Qt(QtQuick, QML), React, NextJS, Express, Node\\
-			Tools: & Git, Linux, Docker, Github Actions\\
+			Tools: & Git, Terraform, Kubernetes, Linux, Docker, Cloud Platforms, Github Actions\\
 		\end{tabular}\\
 	\end{rSection}
 	
@@ -75,24 +90,19 @@
 	%----------------------------------------------------------------------------------------
 
 	\begin{rSection}{PROJECTS}
-		\vspace{-1.25em}
+		\vspace{-1em}
 		\item \textbf{Trinity} \textit{python, tensorflow, pyside6, matlab} \hfill {\href{https://x.rishikumar.dev/trinity}{x.rishikumar.dev/trinity}}\\
-			{Trinity \textbf{identifies and extracts FEC schemes} from unknown demodulated signals using an \textbf{improved RNN model} trained on 1 million+ samples. Trinity can be used as a Command Line and Graphical User Interface which is written in python using pyside6.}
-		\item \textbf{Titan} \textit{golang} \hfill {\href{https://x.rishikumar.dev/titan}{x.rishikumar.dev/titan}}\\
-			{A WIP \textbf{compiler} for my implementation of \textbf{lox programming language} using \textbf{recursive descent technique}  for parsing.}
+			{Trinity \textbf{identifies and extracts FEC schemes} from unknown demodulated signals with an accuracy of 90+, using an \textbf{improved RNN model} trained on 1 million+ samples. Trinity can be used as a CLI and GUI written in python.}
 		\item \textbf{Gofetch} \textit{golang} \hfill {\href{https://x.rishikumar.dev/gofetch}{x.rishikumar.dev/gofetch}}\\
 			{A \textbf{system fetch} utility written in golang.}
 	\end{rSection} 
 
 
-	
 	%----------------------------------------------------------------------------------------
 	\begin{rSection}{Accomplishments} 
-		\textbf{E-Yantra} {Robotics Competition} \hfill IIT Bombay\\
-		{Our team were the top 10-30 ranked team in the competition and managed to reach the semi-final stage out of 1000+ teams.}\\	
 		\textbf{Smart India Hackathon} {Engineering Competition} \hfill Indian Government\\
-		{Led my team to the Grand Finale where we worked on problem statement SIH1447 by the National
-Technical Research Organization for identifying and extracting FEC schemes from unknown demodulated signals.} 	
+		{\textbf{Led} my team to the \textbf{Grand Finale} where we worked on problem statement SIH1447 by the National
+		Technical Research Organization for identifying and extracting \textbf{FEC schemes} from unknown demodulated signals.} 	
 	\end{rSection}
 	%----------------------------------------------------------------------------------------
 \end{document}
