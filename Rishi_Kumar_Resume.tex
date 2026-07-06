@@ -1,12 +1,12 @@
 \documentclass{resume} % Use the custom resume.cls style
 
-\usepackage[left=0.3 in,top=0.3 in,right=0.3 in,bottom=0.3in]{geometry} % Document margins
+\usepackage[left=0.25in,top=0.25in,right=0.25in,bottom=0.25in]{geometry} % Document margins
 \usepackage{titlesec}
 \titlespacing{\section}{0pt}{*0}{*0}
 
 \usepackage{enumitem}
 \setlist{nosep,leftmargin=*}
-\linespread{0.9}
+\linespread{0.85}
 
 
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
@@ -30,6 +30,21 @@
 
 \begin{rSection}{WORK EXPERIENCE}
 
+	\textbf{Texas Instruments} \hfill Bengaluru, India\\
+	\textit{Software Engineer} \hfill \textit{Aug 2025 - Present}
+	\begin{itemize}
+		\item Contributed to the ICSS\_EMAC Ethernet driver and PRU-based switch/MAC, including maintenance of high-availability protocols like \textbf{IEC 62439-3 (HSR/PRP)} and \textbf{IEEE 802.1CB (FRER)}.
+		\item Maintained the Industrial Communications SDK, ensuring seamless stack integration and customer usability.
+		\item Designed and maintained test automation pipelines for industrial protocol validation.
+		\item Achieved runner-up in an internal AI hackathon for a project that was subsequently adopted for team-wide use.
+	\end{itemize}
+
+	\textbf{Texas Instruments} \hfill Bengaluru, India\\
+	\textit{Software Engineer Intern} \hfill \textit{Jan 2025 - Jul 2025}
+	\begin{itemize}
+		\item Developing prototype for IEEE 802.1CB \textbf{Frame Replication and Elimination} on Sitara processors, improving reliability for \textbf{time-sensitive networks} (TSN) using PRU-Assembly and C language.
+		\item Also working on improving documentation and optimising CPU cycles and memory for internal codebase.
+	\end{itemize}
 	\textbf{Galoy Money} \hfill Remote\\
 	\textit{Infrastructure Team} \hfill \textit{May 2024 - Aug 2024}
 	\begin{itemize}
@@ -43,18 +58,9 @@
 	\textit{Contractor} \hfill \textit{May 2024 - Aug 2024}
 	\begin{itemize}
 		\itemsep -0.2pt {}
-		\item Packaged \textbf{Android Development} environment for \textbf{Nix}, slashing setup time from a few hours to 5 minutes.
+		\item Reduced setup time from few hours to 5 minutes by packaging \textbf{android development} environment for nix.
 		\item Implemented comprehensive \textbf{documentation infrastructure} for devenv.sh, enhancing developer productivity and user adoption rates.
 		\item Incorporated \textbf{Language Server} for devenv.sh .
-	\end{itemize}
-
-
-	\textbf{KDE} \hfill Remote\\
-	\textit{Maintainer, Contributor} \hfill \textit{Dec 2022 - Present}
-	\begin{itemize}
-		\item Fixed critical \textbf{User Interface bugs} in Plasma 6, improving experience for end-users.
-		\item \textbf{Implemented} offline functionality in Tokodon, enabling seamless local development and content interaction.
-		\item Engineered and integrated \textbf{automated Appium tests} into \textbf{KDE's GitLab CI pipeline}.
 	\end{itemize}
 
 	\textbf{Google Summer Of Code 2023} \hfill Remote\\
@@ -99,11 +105,5 @@
 	\end{itemize}
 \end{rSection}
 
-%----------------------------------------------------------------------------------------
-\begin{rSection}{ACCOMPLISHMENTS}
-	\begin{itemize}
-		\item \textbf{Smart India Hackathon Finalist:} Led team to Grand Finale, implementing problem statement SIH1447 for the National Technical Research Organization; developed Trinity, a machine learning innovation achieving 92\% accuracy in FEC scheme analysis using advanced RNN model
-	\end{itemize}
-\end{rSection}
-%----------------------------------------------------------------------------------------
+
 \end{document}
